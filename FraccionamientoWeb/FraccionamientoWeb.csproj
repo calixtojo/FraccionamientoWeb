@@ -166,6 +166,7 @@
     <Content Include="Content\Login\vendor\select2\select2.js" />
     <Content Include="Content\Login\vendor\select2\select2.min.css" />
     <Content Include="Content\Login\vendor\select2\select2.min.js" />
+    <Content Include="Content\Menu\Menu.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\Login\font-awesome-4.7.0\css\font-awesome.css" />
@@ -266,6 +267,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Login\main.js" />
+    <Content Include="Scripts\Menu\Menu.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
