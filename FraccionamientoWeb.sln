@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraccionamientoWeb", "FraccionamientoWeb\FraccionamientoWeb.csproj", "{F59988BF-1109-4BA0-9F5B-F4FAFF32754A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraccionamientoWeb.BL", "FraccionamientoWeb.BL\FraccionamientoWeb.BL.csproj", "{2874DDEA-2B3F-4C2D-AD5F-C3C1F7FADC27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraccionamientoWeb.WebAPI", "FraccionamientoWeb.WebAPI\FraccionamientoWeb.WebAPI.csproj", "{2B226F31-69EF-48D6-B545-B43E9F8D2C21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F59988BF-1109-4BA0-9F5B-F4FAFF32754A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F59988BF-1109-4BA0-9F5B-F4FAFF32754A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F59988BF-1109-4BA0-9F5B-F4FAFF32754A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2874DDEA-2B3F-4C2D-AD5F-C3C1F7FADC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2874DDEA-2B3F-4C2D-AD5F-C3C1F7FADC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2874DDEA-2B3F-4C2D-AD5F-C3C1F7FADC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2874DDEA-2B3F-4C2D-AD5F-C3C1F7FADC27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B226F31-69EF-48D6-B545-B43E9F8D2C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B226F31-69EF-48D6-B545-B43E9F8D2C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B226F31-69EF-48D6-B545-B43E9F8D2C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B226F31-69EF-48D6-B545-B43E9F8D2C21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
