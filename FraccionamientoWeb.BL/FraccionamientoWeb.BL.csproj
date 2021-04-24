@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -98,6 +101,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\FraccionamientoContext.cs" />
+    <Compile Include="DTOs\MapperConfig.cs" />
+    <Compile Include="DTOs\Tb_Cat_Area_ComunDTO.cs" />
     <Compile Include="Models\Tb_Cat_Area_Comun.cs" />
     <Compile Include="Models\Tb_Cat_Conceptos.cs" />
     <Compile Include="Models\Tb_Cat_Montos.cs" />
@@ -114,8 +119,60 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IGenericRepository.cs" />
     <Compile Include="Repositories\Implements\GenericRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_Cat_Area_ComunRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_Cat_ConceptosRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_Cat_MontosRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_Cat_MultasRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_Cat_ProveedoresRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_Cat_Tipo_PagoRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_Cat_VisitasRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_CobrosRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_EvidenciasRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_MultasRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_PagosRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_Reserva_Area_ComunRepository.cs" />
+    <Compile Include="Repositories\Implements\Tb_VisitasRepository.cs" />
+    <Compile Include="Repositories\ITb_Cat_Area_ComunRepository.cs" />
+    <Compile Include="Repositories\ITb_Cat_ConceptosRepository.cs" />
+    <Compile Include="Repositories\ITb_Cat_MontosRepository.cs" />
+    <Compile Include="Repositories\ITb_Cat_MultasRepository.cs" />
+    <Compile Include="Repositories\ITb_Cat_ProveedoresRepository.cs" />
+    <Compile Include="Repositories\ITb_Cat_Tipo_PagoRepository.cs" />
+    <Compile Include="Repositories\ITb_Cat_VisitasRepository.cs" />
+    <Compile Include="Repositories\ITb_CobrosRepository.cs" />
+    <Compile Include="Repositories\ITb_EvidenciasRepository.cs" />
+    <Compile Include="Repositories\ITb_MultasRepository.cs" />
+    <Compile Include="Repositories\ITb_PagosRepository.cs" />
+    <Compile Include="Repositories\ITb_Reserva_Area_ComunRepository.cs" />
+    <Compile Include="Repositories\ITb_VisitasRepository.cs" />
     <Compile Include="Services\IGenericService.cs" />
     <Compile Include="Services\Implements\GenericService.cs" />
+    <Compile Include="Services\Implements\Tb_Cat_Area_ComunService.cs" />
+    <Compile Include="Services\Implements\Tb_Cat_ConceptosService.cs" />
+    <Compile Include="Services\Implements\Tb_Cat_MontosService.cs" />
+    <Compile Include="Services\Implements\Tb_Cat_MultasService.cs" />
+    <Compile Include="Services\Implements\Tb_Cat_ProveedoresService.cs" />
+    <Compile Include="Services\Implements\Tb_Cat_Tipo_PagoService.cs" />
+    <Compile Include="Services\Implements\Tb_Cat_VisitasService.cs" />
+    <Compile Include="Services\Implements\Tb_CobrosService.cs" />
+    <Compile Include="Services\Implements\Tb_EvidenciasService.cs" />
+    <Compile Include="Services\Implements\Tb_MultasService.cs" />
+    <Compile Include="Services\Implements\Tb_PagosService.cs" />
+    <Compile Include="Services\Implements\Tb_Reserva_Area_ComunService.cs" />
+    <Compile Include="Services\Implements\Tb_VisitasService.cs" />
+    <Compile Include="Services\ITb_Cat_Area_ComunService.cs" />
+    <Compile Include="Services\ITb_Cat_ConceptosService.cs" />
+    <Compile Include="Services\ITb_Cat_MontosService.cs" />
+    <Compile Include="Services\ITb_Cat_MultasService.cs" />
+    <Compile Include="Services\ITb_Cat_ProveedoresService.cs" />
+    <Compile Include="Services\ITb_Cat_Tipo_PagoService.cs" />
+    <Compile Include="Services\ITb_Cat_VisitasService.cs" />
+    <Compile Include="Services\ITb_CobrosService.cs" />
+    <Compile Include="Services\ITb_EvidenciasService.cs" />
+    <Compile Include="Services\ITb_MultasService.cs" />
+    <Compile Include="Services\ITb_PagosService.cs" />
+    <Compile Include="Services\ITb_Reserva_Area_ComunService.cs" />
+    <Compile Include="Services\ITb_VisitasService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

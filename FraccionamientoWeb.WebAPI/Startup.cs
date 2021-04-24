@@ -1,8 +1,5 @@
-﻿using Microsoft.Owin;
+﻿using FraccionamientoWeb.BL.Data;
 using Owin;
-using System;
-using System.Threading.Tasks;
-//using FraccionamientoWeb.BL.Data;
 
 namespace FraccionamientoWeb.WebAPI
 {
@@ -14,7 +11,7 @@ namespace FraccionamientoWeb.WebAPI
         /// <param name="app"></param>
         public void ConfigureAuth(IAppBuilder app)
         {
-            //app.CreatePerOwinContext(FraccionamientoContext.Create());
+            app.CreatePerOwinContext(FraccionamientoContext.Create);
 
         }
     }

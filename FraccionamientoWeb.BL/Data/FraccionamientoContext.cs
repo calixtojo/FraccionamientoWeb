@@ -1,4 +1,5 @@
 ﻿using System;
+using MySql.Data.EntityFramework;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace FraccionamientoWeb.BL.Data
 {
     public class FraccionamientoContext : DbContext
     {
+        private static FraccionamientoContext fraccionamientoContext = null;
+
         public FraccionamientoContext() : base("FraccionamientoContext")
         {
 
@@ -38,6 +41,10 @@ namespace FraccionamientoWeb.BL.Data
         /// <returns></returns>
         public static FraccionamientoContext Create()
         {
+            //if(fraccionamientoContext == null)
+            //{
+            //    fraccionamientoContext = new FraccionamientoContext();
+            //}
             return new FraccionamientoContext();
         }
 
