@@ -4,16 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 using FraccionamientoWeb.BL.Models;
-
-
+using System.Data.Entity;
 
 namespace FraccionamientoWeb.BL.Data
 {
     public class FraccionamientoContext : DbContext
     {
-        private static FraccionamientoContext fraccionamientoContext = null;
+        //private static FraccionamientoContext fraccionamientoContext = null;
 
         public FraccionamientoContext() : base("FraccionamientoContext")
         {
