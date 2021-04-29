@@ -15,7 +15,7 @@ using FraccionamientoWeb.BL.Services.Implements;
 
 namespace FraccionamientoWeb.WebAPI.Controllers
 {
-    //[RoutePrefix("api/CatAreaComun")]
+    [RoutePrefix("api/CatAreaComun")]
     public class CatAreaComunController : ApiController
     {
 
@@ -38,7 +38,7 @@ namespace FraccionamientoWeb.WebAPI.Controllers
         ///     Obtiene catalogo Cat_Area_Comun
         /// </summary>
         [HttpGet]
-        public async Task<IHttpActionResult> GetAll_Tb_Cat_Area_Comun()
+        public async Task<IHttpActionResult> GetAllCatAreaComun()
         {
             var cat_areas_comun = await tb_Cat_Area_ComunService.GetAll();
             var cat_areas_comunDTO = cat_areas_comun.Select(x => mapper.Map<Tb_Cat_Area_ComunDTO>(x));
@@ -47,10 +47,10 @@ namespace FraccionamientoWeb.WebAPI.Controllers
 
 
         /// <summary>
-        ///     Obtiene Registro Cat_Area_Comun Por ID
+        ///  Obtiene Registro Cat_Area_Comun Por ID
         /// </summary>
         [HttpGet]
-        public async Task<IHttpActionResult> GetById_Tb_Cat_Area_Comun(int id)
+        public async Task<IHttpActionResult> GetByIdCatAreaComun(int id)
         {
             var cat_area_comun = await tb_Cat_Area_ComunService.GetById(id);
 
@@ -72,20 +72,29 @@ namespace FraccionamientoWeb.WebAPI.Controllers
         /// <param name="tb_Cat_Area_ComunDTO"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IHttpActionResult> Insert_Tb_Cat_Area_Comun(Tb_Cat_Area_ComunDTO tb_Cat_Area_ComunDTO)
+        public async Task<IHttpActionResult> InsertCatAreaComun(Tb_Cat_Area_ComunDTO tb_Cat_Area_ComunDTO)
         {
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            var flag = await tb_Cat_Area_ComunService.GetById(tb_Cat_Area_ComunDTO.Id_Area_Comun); //Validacion de registro exista en DB
+
+            if (flag == null)
+            {
+                return NotFound();
+
+            }
             else
             {
-                var Cat_Area_Comun = mapper.Map<Tb_Cat_Area_Comun>(tb_Cat_Area_ComunDTO);
+                var cat_Area_Comun = mapper.Map<Tb_Cat_Area_Comun>(tb_Cat_Area_ComunDTO);
 
                 try
                 {
-                    Cat_Area_Comun = await tb_Cat_Area_ComunService.Insert(Cat_Area_Comun);
-                    return Ok(Cat_Area_Comun);
+                    cat_Area_Comun = await tb_Cat_Area_ComunService.Insert(cat_Area_Comun);
+                    return Ok(cat_Area_Comun);
                 }
                 catch (Exception ex)
                 {
@@ -96,6 +105,81 @@ namespace FraccionamientoWeb.WebAPI.Controllers
                 
             }
         }
+
+
+        /// <summary>
+        /// Metodo para actualizar registro en tabla Tb_Cat_Area_Comun
+        /// </summary>
+        /// <param name="tb_Cat_Area_ComunDTO"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<IHttpActionResult> UpdateCatAreaComun(Tb_Cat_Area_ComunDTO tb_Cat_Area_ComunDTO, int id)
+        {
+            if(!ModelState.IsValid) //Validacion del modelo
+            {
+                return BadRequest(ModelState);
+            }
+
+            if(tb_Cat_Area_ComunDTO.Id_Area_Comun != id) //Validacion por Id
+            {
+                return BadRequest();
+
+            }
+
+            var flag = await tb_Cat_Area_ComunService.GetById(id); //Validacion de registro exista en DB
+           
+            if (flag == null)
+            {
+                return NotFound();
+
+            }
+
+            try
+            {
+                var cat_Area_Comun = mapper.Map<Tb_Cat_Area_Comun>(tb_Cat_Area_ComunDTO);
+                cat_Area_Comun = await tb_Cat_Area_ComunService.Update(cat_Area_Comun); //Metodo que actualiza registro
+                return Ok(cat_Area_Comun);
+
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+
+        }
+
+
+
+        ///// <summary>
+        ///// Metodo para eliminar un registro de la tabla CatAreaComun
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //[HttpDelete]
+        //public async Task<IHttpActionResult> DeleteCatAreaComun(int id)
+        //{
+        //    var flag = await tb_Cat_Area_ComunService.GetById(id); //Validacion de registro exista en DB
+
+        //    if (flag == null)
+        //    {
+        //        return NotFound();
+
+        //    }
+
+        //    try
+        //    {
+        //        await tb_Cat_Area_ComunService.Delete(id);
+        //        return Ok();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        return InternalServerError(ex);
+        //    }
+        //    return Ok();
+        //}
 
     }
 }

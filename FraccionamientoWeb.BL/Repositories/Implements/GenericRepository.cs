@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Threading.Tasks;
 using FraccionamientoWeb.BL.Data;
 
@@ -45,8 +46,8 @@ namespace FraccionamientoWeb.BL.Repositories.Implements
 
         public async Task<TEntity> Update(TEntity entity)
         {
-            fraccionamientoContext.Entry(entity).State = EntityState.Modified;
-            //universityContext.Set<TEntity>().AddOrUpdate(entity);
+            //fraccionamientoContext.Entry(entity).State = EntityState.Modified;
+            fraccionamientoContext.Set<TEntity>().AddOrUpdate(entity);
             await fraccionamientoContext.SaveChangesAsync();
             return entity;
         }

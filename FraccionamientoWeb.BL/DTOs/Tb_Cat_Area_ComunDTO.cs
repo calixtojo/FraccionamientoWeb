@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace FraccionamientoWeb.BL.DTOs
 {
@@ -10,6 +11,6 @@ namespace FraccionamientoWeb.BL.DTOs
         [StringLength(50)]
         public string Descripcion { get; set; }
         [Required(ErrorMessage = "El campo es requerido")]
-        public bool Activo { get; set; }
+        public Boolean Activo { get; set; }
     }
 }
